@@ -11,7 +11,6 @@ import 'package:dwrapp/models/station_all_model.dart';
 import 'package:dwrapp/states/main_home.dart';
 import 'package:dwrapp/utility/my_constant.dart';
 import 'package:dwrapp/utility/sqllite_helper.dart';
-import 'package:dwrapp/widgets/widget_icon_buttom.dart';
 import 'package:dwrapp/widgets/widget_text.dart';
 
 class DetailStation extends StatefulWidget {
@@ -54,12 +53,12 @@ class _DetailStationState extends State<DetailStation> {
 
     indexBody = widget.indexBody ?? 0;
 
-    
     readAllData();
   }
 
   Future<void> readAllData() async {
-    String path = '${MyConstant.domain}/dwr/service/stations/';
+    String path = '${MyConstant.domain}/dwr/service/station/';
+    print('##30nov path at detai_station ==> $path');
     await Dio().get(path).then((value) {
       var result = value.data['response'];
       for (var element in result) {
@@ -109,7 +108,6 @@ class _DetailStationState extends State<DetailStation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
         centerTitle: true,
         backgroundColor: MyConstant.blue,
         title: WidgetText(
@@ -130,7 +128,7 @@ class _DetailStationState extends State<DetailStation> {
                 setState(() {});
               },
             ),
-      body: load ? const SizedBox() :  bodys[indexBody],
+      body: load ? const SizedBox() : bodys[indexBody],
     );
   }
 }
