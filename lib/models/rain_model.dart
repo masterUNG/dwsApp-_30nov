@@ -4,7 +4,7 @@ import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class RainModel {
-  final String id;
+  final int id;
   final String ondate;
   final String soil;
   final String temp;
@@ -51,7 +51,7 @@ class RainModel {
 
   factory RainModel.fromMap(Map<String, dynamic> map) {
     return RainModel(
-      id: (map['id'] ?? '') as String,
+      id: (map['id'] ?? 0) as int,
       ondate: (map['ondate'] ?? '') as String,
       soil: (map['soil'] ?? '') as String,
       temp: (map['temp'] ?? '') as String,

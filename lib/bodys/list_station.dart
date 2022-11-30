@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_interpolation_to_compose_strings
 import 'package:dwrapp/bodys/main_page.dart';
-import 'package:dwrapp/states/detail_station.dart';
 import 'package:dwrapp/utility/my_constant.dart';
 import 'package:dwrapp/widgets/widget_image_internet.dart';
 import 'package:flutter/material.dart';

@@ -4,7 +4,7 @@ import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class StationAllModel {
-  final String id;
+  final int id;
   final String station_id;
   final String title;
   final String tumbon;
@@ -15,8 +15,8 @@ class StationAllModel {
   final String lat;
   final String lng;
   final String image;
-  final String type;
-  final String status;
+  final int type;
+  final int status;
   StationAllModel({
     required this.id,
     required this.station_id,
@@ -53,7 +53,7 @@ class StationAllModel {
 
   factory StationAllModel.fromMap(Map<String, dynamic> map) {
     return StationAllModel(
-      id: (map['id'] ?? '') as String,
+      id: (map['id'] ?? 0) as int,
       station_id: (map['station_id'] ?? '') as String,
       title: (map['title'] ?? '') as String,
       tumbon: (map['tumbon'] ?? '') as String,
@@ -64,8 +64,8 @@ class StationAllModel {
       lat: (map['lat'] ?? '') as String,
       lng: (map['lng'] ?? '') as String,
       image: (map['image'] ?? '') as String,
-      type: (map['type'] ?? '') as String,
-      status: (map['status'] ?? '') as String,
+      type: (map['type'] ?? 0) as int,
+      status: (map['status'] ?? 0) as int,
     );
   }
 

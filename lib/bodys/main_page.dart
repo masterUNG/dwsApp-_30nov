@@ -63,7 +63,6 @@ class _MainPageState extends State<MainPage> {
     listDatas.add(soils);
     listDatas.add(temps);
 
-
     setupColorBools();
 
     readRainData();
@@ -84,6 +83,8 @@ class _MainPageState extends State<MainPage> {
     String path =
         '${MyConstant.domain}/dwr/service/rain/rain.php?stn_id=${stationAllModel!.station_id}';
 
+    print('##30nov path main_page ==> $path');
+
     await Dio().get(path).then((value) {
       var response = value.data['response'];
 
@@ -101,7 +102,7 @@ class _MainPageState extends State<MainPage> {
       print('## 0001 $pm25s');
 
       pm25s = pm25s.reversed.toList();
-      print('## 0002 $pm25s');   
+      print('## 0002 $pm25s');
 
       pm10s = pm10s.reversed.toList();
       soils = soils.reversed.toList();
